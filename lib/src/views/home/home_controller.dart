@@ -1,9 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:prueba_kubo/src/models/product.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+
+import 'detail_product/detail_product_view.dart';
 
 class HomeController extends ControllerMVC {
   factory HomeController() {
@@ -17,10 +20,10 @@ class HomeController extends ControllerMVC {
   static HomeController get con => _this;
 
   String pageName = 'Home';
-
-  Future<Product> productsList;
-  List<Data> aux1;
-  List<Data> aux2;
+bool isSearching = false;
+  Future<Product> product;
+  Product principal = Product(data: []);
+  Product aux = Product(data: []);
 
   Future<Product> fetchProduct() async {
     final response = await http.get(
@@ -40,10 +43,14 @@ class HomeController extends ControllerMVC {
     return '${NumberFormat.simpleCurrency().format(number).replaceAll('.00', '').replaceAll(',', '.')} COP';
   }
 
-  void filterByName(String text) async{
+  void prueba() async {
+    principal = await product;
+    print(principal.data[0].descripcion);
+  }
+
+  void filterByName(String text) async {
     setState(() {
-      
-      aux1 = aux2
+      aux.data = principal.data
           .where(
             (product) => product.nombre
                 .toLowerCase()
@@ -66,5 +73,13 @@ class HomeController extends ControllerMVC {
           )
           .toList();
     });
+  }
+  void toDetail(context, Data data) {
+    Navigator.push(
+      context,
+      CupertinoPageRoute(
+        builder: (context) => DetailproductView(product: data,),
+      ),
+    );
   }
 }

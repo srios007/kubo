@@ -17,6 +17,8 @@ class KuboTextField extends StatelessWidget {
     this.prefixWidget,
     this.onFieldSubmitted,
     this.suffixText,
+    this.onTap,
+    this.controller,
   });
 
   String placeholder;
@@ -31,6 +33,7 @@ class KuboTextField extends StatelessWidget {
   String suffixText;
   var icon;
   var controller;
+  var onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,6 +61,7 @@ class KuboTextField extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 3),
               child: TextFormField(
+                onTap: onTap,
                 controller: controller,
                 autofocus: false,
                 style: TextStyle(color: Palette.black, fontSize: 16),

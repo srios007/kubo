@@ -3,69 +3,79 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 class Styles {
-  static TextStyle welcomeTitleStyle = TextStyle(
+  static const TextStyle welcomeTitleStyle = TextStyle(
     color: Palette.kuboColor,
     fontSize: 25.0,
     fontWeight: FontWeight.w700,
   );
 
-  static TextStyle welcomeSubtitleStyle = TextStyle(
+  static const TextStyle welcomeSubtitleStyle = TextStyle(
     color: Palette.kuboColor,
     fontSize: 14.0,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle buttonStyle = TextStyle(
+  static const TextStyle buttonStyle = TextStyle(
     fontSize: 16,
     color: Palette.kuboColor,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle activeButtonStyle = TextStyle(
+  static const TextStyle activeButtonStyle = TextStyle(
     fontSize: 16,
     color: Palette.white,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle normalLabelStyle = TextStyle(
+  static const TextStyle normalLabelStyle = TextStyle(
     color: Palette.black,
     fontSize: 14.0,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle hintStyle = TextStyle(
+  static const TextStyle hintStyle = TextStyle(
     color: Color(0xFFB1B1B1),
     fontSize: 18,
     fontWeight: FontWeight.w400,
   );
 
 
-  static TextStyle laterTitleStyle = TextStyle(
+  static const TextStyle laterTitleStyle = TextStyle(
     color: Palette.laterColor,
     fontSize: 25.0,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle homeTitleStyle = TextStyle(
+  static const TextStyle homeTitleStyle = TextStyle(
     color: Palette.black,
     fontSize: 20,
     fontWeight: FontWeight.w700,
   );
-  static TextStyle gridViewStyle1 = TextStyle(
+  static const TextStyle gridViewStyle1 = TextStyle(
     color: Palette.black,
     fontSize: 16,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle gridViewStyle2 = TextStyle(
+  static const TextStyle gridViewStyle2 = TextStyle(
     color: Colors.red,
     fontSize: 16,
     fontWeight: FontWeight.w700,
     decoration: TextDecoration.lineThrough,
     decorationColor: Colors.red,
   );
-  static TextStyle gridViewStyle3 = TextStyle(
+  static const TextStyle gridViewStyle3 = TextStyle(
     color: Palette.black,
     fontSize: 18,
     fontWeight: FontWeight.bold,
   );
-    static TextStyle discountStyle = TextStyle(
+    static const TextStyle discountStyle = TextStyle(
     color: Palette.white,
     fontSize: 20,
     fontWeight: FontWeight.bold,
+  );
+      static const TextStyle roResultTitleStyle = TextStyle(
+    color: Palette.black,
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+  );
+      static const TextStyle noResultLabelStyle = TextStyle(
+    color: Palette.black,
+    fontSize: 15,
+    fontWeight: FontWeight.w600,
   );
 }
