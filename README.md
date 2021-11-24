@@ -1,16 +1,14 @@
-# prueba_kubo
+# Prueba para kubo
 
-A new Flutter project.
+Desarrollado por Santiago Rios Valero
 
-## Getting Started
+## Se necesita:
 
-This project is a starting point for a Flutter application.
+- Versión de flutter 2.5.3
+## Versiones de las dependencias
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- http: ^0.13.4
+- mvc_pattern: ^8.1.2
+- intl: ^0.17.0
+- material_design_icons_flutter: ^5.0.6295
+- shared_preferences: ^2.0.9

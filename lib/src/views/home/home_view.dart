@@ -25,6 +25,7 @@ class _HomeViewState extends StateMVC<HomeView> {
   void initState() {
     super.initState();
     controller.product = controller.fetchProduct();
+    controller.getHistory();
   }
 
   @override
@@ -78,6 +79,8 @@ class _HomeViewState extends StateMVC<HomeView> {
                                     ),
                               )
                               .toList();
+                          // Guarda localmente la búsqueda
+                          controller.setHistory(searchController.text.trim());
                         },
                       );
                     } else {
@@ -102,8 +105,8 @@ class _HomeViewState extends StateMVC<HomeView> {
               const SizedBox(height: 24),
               controller.aux.data.isEmpty && controller.isSearching
                   ? Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 14),
-                    child: Column(
+                      padding: const EdgeInsets.symmetric(horizontal: 14),
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
@@ -114,7 +117,7 @@ class _HomeViewState extends StateMVC<HomeView> {
                             ),
                           ),
                           Text(
-                            "Esto muy vacio",
+                            "Producto no encontrado",
                             style: Styles.roResultTitleStyle,
                             textAlign: TextAlign.center,
                           ),
@@ -125,14 +128,14 @@ class _HomeViewState extends StateMVC<HomeView> {
                           ),
                         ],
                       ),
-                  )
+                    )
                   : Center(
                       child: FutureBuilder<Product>(
                         future: controller.product,
                         builder: (context, snapshot) {
                           if (snapshot.hasData) {
                             return Container(
-                              height: MediaQuery.of(context).size.height * 0.55,
+                              height: MediaQuery.of(context).size.height * 0.57,
                               width: double.infinity,
                               child: Grid(
                                 product: controller.principal.data.isNotEmpty &&

@@ -35,7 +35,6 @@ class Styles {
     fontWeight: FontWeight.w400,
   );
 
-
   static const TextStyle laterTitleStyle = TextStyle(
     color: Palette.laterColor,
     fontSize: 25.0,
@@ -63,19 +62,39 @@ class Styles {
     fontSize: 18,
     fontWeight: FontWeight.bold,
   );
-    static const TextStyle discountStyle = TextStyle(
+  static const TextStyle discountStyle = TextStyle(
     color: Palette.white,
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
-      static const TextStyle roResultTitleStyle = TextStyle(
+  static const TextStyle roResultTitleStyle = TextStyle(
     color: Palette.black,
     fontSize: 30,
     fontWeight: FontWeight.bold,
   );
-      static const TextStyle noResultLabelStyle = TextStyle(
+  static const TextStyle noResultLabelStyle = TextStyle(
     color: Palette.black,
     fontSize: 15,
     fontWeight: FontWeight.w600,
+  );
+  static TextStyle detailTitleStyle = TextStyle(
+    color: Palette.black.withOpacity(0.7),
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
+  static TextStyle detailLabelStyle = TextStyle(
+    color: Palette.black.withOpacity(0.7),
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+  );
+  static const TextStyle moneyStyle = TextStyle(
+    color: Palette.mainColor,
+    fontSize: 21,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle buttonyStyle = TextStyle(
+    color: Palette.white,
+    fontSize: 15,
+    fontWeight: FontWeight.bold,
   );
 }

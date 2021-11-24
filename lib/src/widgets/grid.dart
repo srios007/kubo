@@ -22,7 +22,7 @@ class _GridState extends State<Grid> {
         crossAxisCount: 2,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
-        childAspectRatio: 0.6,
+        childAspectRatio: 0.55,
       ),
       itemCount: widget.product.data.length,
       itemBuilder: (BuildContext context, index) {

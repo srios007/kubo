@@ -5,6 +5,7 @@ import 'package:prueba_kubo/src/models/product.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'detail_product/detail_product_view.dart';
 
@@ -20,10 +21,11 @@ class HomeController extends ControllerMVC {
   static HomeController get con => _this;
 
   String pageName = 'Home';
-bool isSearching = false;
+  bool isSearching = false;
   Future<Product> product;
   Product principal = Product(data: []);
   Product aux = Product(data: []);
+  List<String> listString = [];
 
   Future<Product> fetchProduct() async {
     final response = await http.get(
@@ -74,12 +76,28 @@ bool isSearching = false;
           .toList();
     });
   }
+
   void toDetail(context, Data data) {
     Navigator.push(
       context,
       CupertinoPageRoute(
-        builder: (context) => DetailproductView(product: data,),
+        builder: (context) => DetailproductView(
+          product: data,
+        ),
       ),
     );
+  }
+
+  getHistory() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    listString = (prefs.getStringList("list"));
+    await prefs.setStringList("list", listString);
+  }
+
+  setHistory(String text) async {
+    listString.add(text);
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setStringList("list", listString);
   }
 }
